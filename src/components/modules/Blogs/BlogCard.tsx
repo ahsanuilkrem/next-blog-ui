@@ -30,12 +30,11 @@ export default function BlogCard({ post }: { post: any }) {
           </h3>
 
           <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">
-            {post.content}
+             {post.content}
           </p>
-
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <Image
+           
+           
+          <Image
                 src={
                   post.author.picture ||
                   "https://cdn-icons-png.flaticon.com/512/9385/9385289.png"
@@ -45,6 +44,10 @@ export default function BlogCard({ post }: { post: any }) {
                 height={36}
                 className="rounded-full border-2 border-gray-200 dark:border-gray-700"
               />
+
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+             
               <span className="text-gray-600 dark:text-gray-300 text-sm flex items-center gap-1">
                 {post.author.name}
                 {post.author.isVerified && (

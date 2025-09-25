@@ -1,7 +1,9 @@
-const DashboardHomePage = () => {
+
+const DashboardHomePage = async () => {
+
   return (
     <div>
-      <h1>Dashboard Home Page</h1>
+      <h1>  dashboard Home Page</h1>
     </div>
   );
 };
