@@ -15,8 +15,9 @@ import {
 } from "@/components/ui/form";
 import Image from "next/image";
 import { signIn } from "next-auth/react";
-// import { login } from "@/actions/auth";
-// import { toast } from "sonner";
+import { login } from "@/actions/auth";
+import { toast } from "sonner";
+
 
 // type LoginFormValues = {
 //   email: string;
@@ -137,7 +138,7 @@ export default function LoginForm() {
                 callbackUrl: "/dashboard",
               })
             }
-          >
+        >
             {/* Google */}
             <Image
               src="https://img.icons8.com/color/24/google-logo.png"

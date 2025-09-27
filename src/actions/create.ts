@@ -1,21 +1,21 @@
 
 "use server";
 
+import { getUserSession } from "@/helpers/getUserSession";
 // import { getUserSession } from "@/helpers/getUserSession";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
 export const create = async (data: FormData) => {
-//   const session = await getUserSession();
+ const session = await getUserSession();
   const blogInfo = Object.fromEntries(data.entries());
   const modifiedData = {
     ...blogInfo,
-    authorId: 1,
     tags: blogInfo.tags
       .toString()
       .split(",")
       .map((tag) => tag.trim()),
-    // authorId: session?.user?.id,
+    authorId: session?.user?.id,
     isFeatured: Boolean(blogInfo.isFeatured),
   };
 
